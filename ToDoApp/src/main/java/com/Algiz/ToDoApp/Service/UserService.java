@@ -12,7 +12,11 @@ public class UserService {
     private UserRepository userRepository;
 
     public boolean findByUserNameAndMdp(String name, String mdp) {
-        return userRepository.countUser(name, mdp) >= 1;
+        return userRepository.findUser(name, mdp) >= 1;
+    }
+
+    public Integer nbUser(){
+        return userRepository.countUser();
     }
 
 }
